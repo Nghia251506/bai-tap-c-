@@ -1,0 +1,88 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+class da_thuc3
+{
+	private:
+		int a,b,c,d;
+	public:	
+		da_thuc3()
+		{}
+		da_thuc3(int *a, int *b, int *c, int *d)
+		{
+			this -> a = 0;
+			this -> b = 0;
+			this -> c = 0;
+			this -> d = 0;
+		}
+		~da_thuc3()
+		{}
+		void input()
+		{
+			cout<<"Nhap he so bac 3, a= ";
+			cin>>a;
+			cout<<"Nhap he so bac 2, b= ";
+			cin>>b;
+			cout<<"Nhap he so bac 1, c= ";
+			cin>>c;
+			cout<<"Nhap he so tu do, d= ";
+			cin>>d;
+		}
+		
+		void display()
+		{
+			cout<<a<<"x3"
+					<<" + "<<b<<"x2"
+					<<" + "<<c<<"x"
+					<<" + "<<d<<endl;
+		}
+		
+		int geta()
+		{
+			return a;
+		}
+		
+		int getb()
+		{
+			return b;
+		}
+		
+		int getc()
+		{
+			return c;
+		}
+		
+		int getd()
+		{
+			return d;
+		}
+		
+};
+int main(int argc, char *argv[])
+{
+	da_thuc3 dt[2]; 
+	cout<<"Nhap vao 2 da thuc bac 3: "<<endl;
+	for(int i = 1; i <= 2; i++)
+	{
+		cout<<"Nhap da thuc thu"<<i+1<<":"<<endl;
+		cout<<"--------------------"<<endl;
+		dt[i].input();
+	}
+	cout<<"----------------------"<<endl;
+	for(int i = 1; i <= 2; i++)
+	{
+		cout<<"Da thuc thu"<<i+1<<":";
+		dt[i].display();
+	}
+	cout<<"\nTong cua 2 da thuc bac 3:"<<endl;
+				dt[1].display();
+				cout<<" va ";
+				dt[2].display();
+				cout<<" la: "<<endl;
+					cout<<dt[1].geta() + dt[2].geta()
+						<<"x3"<<" + "<<dt[1].getb()+dt[2].getb()
+						<<"x2"<<" + "<<dt[1].getc()+dt[2].getc()
+						<<"x"<<" + "<<dt[1].getd()+dt[2].getd()<<endl;
+	return 0;
+}
